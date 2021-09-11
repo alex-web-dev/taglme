@@ -16,7 +16,7 @@
 	<header class="header">
 		<div class="wrapper">
 			<div class="header__content">
-				<a href="#" class="logo">
+				<a href="#" class="logo header__logo">
 					<img src="images/logo.svg" alt="Taglme" class="logo__img">
 				</a>
 				<nav class="menu header__menu">
@@ -45,7 +45,7 @@
 						<h1 class="title1">Цифровые NFC визитки для вашей компании</h1>
 						<p class="text banner__text">Изготовление брендированных NFC карт и наклеек. <br>
 							Онлайн сервис для создания и редактирования цифровых визиток компании.</p>
-						<button class="btn">Калькулятор онлайн</button>
+						<a href="#calc" class="btn">Калькулятор онлайн</a>
 					</div>
 					<div class="banner__bg">
 						<img src="images/banner/phone.png" class="banner__phone">
@@ -125,7 +125,7 @@
 							<div class="how-work__item-bg">
 								<img src="images/how-work/2.svg" alt="" class="how-work__item-img">
 							</div>
-							<p class="text how-work__item-text"></p>
+							<p class="text how-work__item-text">На NFC карту или наклейку при изготовлении записывается ссылка на веб-страницу, которая находится на нашем сервисе управления цифровыми визитками.</p>
 						</div>
 						<div class="how-work__item">
 							<div class="how-work__item-bg">
@@ -158,7 +158,7 @@
 						<div class="stages__list">
 							<div class="stages__item">
 								<span class="stages__item-num">1</span>
-								<p class="text stages__item-text">В нашем онлайн <b>калькуляторе</b> укажите необходимые данные для расчета стоимости ваших NFC визиток и оформите заказ.</p>
+								<p class="text stages__item-text">В нашем онлайн <a href="#calc">калькуляторе</a> укажите необходимые данные для расчета стоимости ваших NFC визиток и оформите заказ.</p>
 							</div>
 							<div class="stages__item">
 								<span class="stages__item-num">2</span>
@@ -217,12 +217,16 @@
 							<div class="calc__item-name">Общее количество визиток</div>
 							<div class="calc__group">
 								<input class="calc__field calc__field_card" name="card-count" type="number" placeholder="Кол-во" min="1" max="1000">
-								<input class="calc__range calc__range_card" type="range" min="1" max="1000" value="500">
+								<div class="calc__range calc__range_card">
+									<input class="calc__range-input" type="range" min="1" max="1000" value="500">
+								</div>
 							</div>
 							<div class="calc__item-name">Общее количество персон</div>
 							<div class="calc__group">
 								<input class="calc__field calc__field_person" name="person-count" type="number" placeholder="Кол-во" min="1" max="1000">
-								<input class="calc__range calc__range_person" type="range" min="1" max="1000" value="500">
+								<div class="calc__range calc__range_person">
+									<input class="calc__range-input" type="range" min="1" max="1000" value="500">
+								</div>
 							</div>
 							<div class="calc__item-name">Кодирование визиток</div>
 							<div class="calc__group">
@@ -309,13 +313,12 @@
 
 		<section class="video main__video">
 			<div class="wrapper">
-				<div class="video__content">
-					<img src="images/video/img.jpg" alt="" class="video__main">
-					<button class="video__play"></button>
+				<div class="player" data-url="https://www.youtube.com/embed/fGm6YzBrxiI">
+					<img src="images/video/img.jpg" alt="" class="player__bg">
+					<button class="player__play"></button>
 				</div>
 			</div>
 		</section>
-
 		<section class="faq main__faq" id="faq">
 			<div class="wrapper">
 				<div class="faq__content">
