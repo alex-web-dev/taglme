@@ -24,9 +24,13 @@ body {
     flex-direction: column;
 }
 
+.body_lock {
+    overflow: hidden;
+}
+
 .wrapper {
-    max-width: 1270px;
-    padding: 0 15px;
+    max-width: 1280px;
+    padding: 0 20px;
     margin: 0 auto;
 }
 
@@ -332,9 +336,10 @@ body {
 
 .banner__phone {
     position: absolute;
-    top: 10px;
+    bottom: 0;
     right: 150px;
     z-index: 2;
+    max-height: calc(100% + 10px);
 }
 
 .banner__card_1 {
@@ -373,14 +378,63 @@ body {
     bottom: -20px;
 }
 
-.features__list {
+.banner__card-img {
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.features__slider {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     margin: 10px -25px 0;
 }
 
+.swiper-container {
+    overflow: hidden;
+}
+
+.features .swiper-wrapper {
+    max-width: 1260px;
+    flex-wrap: wrap;
+}
+
+.slider-pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.slider-pagination .swiper-pagination-bullet:not(:last-child) {
+    margin-right: 10px;
+}
+
+.slider-pagination .swiper-pagination-bullet-active {
+    background: var(--color-primary);
+}
+
+.features__pagination {
+    display: none;
+    margin-top: 35px;
+}
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    display: block;
+    background: #C4C4C4;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.features .swiper-slide-duplicate {
+    display: none;
+}
+
+.features .swiper-slide {
+    height: auto;
+}
+
 .features__item {
-    width: calc(100% / 12 * 3 - 56px);
     margin: 20px 28px;
 }
 
@@ -412,15 +466,20 @@ body {
     max-width: 560px;
 }
 
-.how-work__list {
-    display: flex;
-    flex-wrap: wrap;
+.how-work__slider {
     margin: 25px -32px 0;
 }
 
+.how-work .swiper-wrapper {
+    flex-wrap: wrap;
+}
+
+.how-work .swiper-slide-duplicate {
+    display: none;
+}
+
 .how-work__item {
-    width: calc(100% / 12 * 3 - 64px);
-    margin: 20px 32px;
+    margin: 15px 32px;
 }
 
 .how-work__item-bg {
@@ -432,6 +491,10 @@ body {
 
 .how-work__item-text {
     margin-top: 25px;
+}
+
+.how-work__pagination {
+    margin-top: 30px;
 }
 
 .stages {
@@ -446,6 +509,7 @@ body {
 
 .stages__right {
     width: 680px;
+    max-width: 100%;
     flex: 0 0 auto;
 }
 
@@ -475,9 +539,26 @@ body {
     transform: translateX(-15px);
 }
 
+.stages__img-mobile {
+    display: none;
+}
+
+.stages__list {
+    position: relative;
+}
+
+.stages__list:before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 109px;
+    height: calc(100% - 1px);
+    width: 14px;
+    background: #403F4D;
+}
+
 .stages__item {
     display: flex;
-    align-items: center;
     margin: 0 0 45px 65px;
 }
 
@@ -497,30 +578,15 @@ body {
     flex: 0 0 auto;
 }
 
-.stages__item-num:before {
-    content: '';
-    position: absolute;
-    bottom: -46px;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 48px;
-    width: 14px;
-    background: #403F4D;
-}
-
 .stages__item:nth-last-child(2) {
     margin-bottom: 60px;
-}
-
-.stages__item:nth-last-child(2) .stages__item-num:before {
-    bottom: -60px;
-    height: 62px;
 }
 
 .stages__item-text {
     color: #fff;
     font-weight: 500;
     margin-left: 35px;
+    align-self: center;
     max-width: 390px;
 }
 
@@ -537,6 +603,7 @@ body {
     font-size: 48px;
     line-height: 57px;
     font-weight: 500;
+    position: relative;
 }
 
 .calc__main {
@@ -758,11 +825,16 @@ input[type='number'] {
     margin-right: 50px;
 }
 
-.clients__list {
+.clients__slider {
     margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
+}
+
+.clients__slider .swiper-wrapper {
     align-items: center;
+}
+
+.clients__pagination {
+    margin-top: 10px;
 }
 
 .about {
@@ -776,9 +848,9 @@ input[type='number'] {
 }
 
 .about__inf {
-    width: 520px;
+    width: 550px;
     max-width: 100%;
-    flex: 0 0 auto;
+    padding-right: 30px;
 }
 
 .about__title2 {
@@ -914,11 +986,11 @@ input[type='number'] {
     justify-content: space-between;
 }
 
-.footer__column:first-child {
+.footer__column_first {
     flex-basis: 420px;
 }
 
-.footer__column:last-child {
+.footer__column_last {
     flex-basis: 254px;
 }
 
@@ -939,6 +1011,7 @@ input[type='number'] {
 
 .social-links {
     display: flex;
+    align-items: flex-start;
 }
 
 .social-links__item:not(:last-child) {
