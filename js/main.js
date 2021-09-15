@@ -139,55 +139,57 @@ const clientsSwiper = new Swiper('.clients__swiper-container',{
 });
 
 /* Smoothscroll to anchors */
-const anchors = document.querySelectorAll('a[href*="#"]');
-for (let anchor of anchors) {
-  anchor.addEventListener('click',  (e) => {
+const $anchors = document.querySelectorAll('a[href^="#"]');
+for (let $anchor of $anchors) {
+  $anchor.addEventListener('click',  (e) => {
     e.preventDefault()
     
-    const blockID = anchor.getAttribute('href');
+    const blockID = $anchor.getAttribute('href');
+    const $elem = document.querySelector(blockID);
 
-    if (blockID === '#') {
+    if (blockID === '#' || !$elem) {
       return;
     }
     
-    const blockOffsetTop = document.querySelector(blockID).getBoundingClientRect().top;
+    const blockOffsetTop = $elem.getBoundingClientRect().top;
+    
     window.scrollBy({ top: (blockOffsetTop), left: 0, behavior: 'smooth' });
-  })
+  });
 }
 
 
-const cardCountRange = document.querySelector('.calc__range_card .calc__range-input');
-const cardCountField = document.querySelector('.calc__field_card');
-const personCountRange = document.querySelector('.calc__range_person .calc__range-input');
-const personCountField = document.querySelector('.calc__field_person');
+const $cardCountRange = document.querySelector('.calc__range_card .calc__range-input');
+const $cardCountField = document.querySelector('.calc__field_card');
+const $personCountRange = document.querySelector('.calc__range_person .calc__range-input');
+const $personCountField = document.querySelector('.calc__field_person');
 
-if (cardCountRange && personCountRange) {
-  rangeInputsUpdate(cardCountRange, 'card-count-range');
-  rangeInputsUpdate(personCountRange, 'person-count-range');
+if ($cardCountRange && $personCountRange) {
+  rangeInputsUpdate($cardCountRange, 'card-count-range');
+  rangeInputsUpdate($personCountRange, 'person-count-range');
 
-  cardCountRange.addEventListener("input", () => { 
-    rangeInputsUpdate(cardCountRange, 'card-count-range');
+  $cardCountRange.addEventListener("input", () => { 
+    rangeInputsUpdate($cardCountRange, 'card-count-range');
   });
 
-  personCountRange.addEventListener("input", () => { 
-    rangeInputsUpdate(personCountRange, 'person-count-range');
+  $personCountRange.addEventListener("input", () => { 
+    rangeInputsUpdate($personCountRange, 'person-count-range');
   });
 
-  cardCountField.addEventListener("input", () => { 
-    if (cardCountField.value > 1000) {
-      cardCountField.value = 1000;
-    } else if (cardCountField.value < 1) {
-      cardCountField.value = 1;
+  $cardCountField.addEventListener("input", () => { 
+    if ($cardCountField.value > 1000) {
+      $cardCountField.value = 1000;
+    } else if ($cardCountField.value < 1) {
+      $cardCountField.value = 1;
     }
 
     updateTotal();
   });
 
-  personCountField.addEventListener("input", () => { 
-    if (personCountField.value > 1000) {
-      personCountField.value = 1000;
-    } else if (personCountField.value < 1) {
-      personCountField.value = 1;
+  $personCountField.addEventListener("input", () => { 
+    if ($personCountField.value > 1000) {
+      $personCountField.value = 1000;
+    } else if ($personCountField.value < 1) {
+      $personCountField.value = 1;
     }
   });
 }
@@ -208,18 +210,67 @@ $playVideoBtns.forEach($btn => {
 });
 
 window.addEventListener('load', () => {
-  moveElem('stages__bg', 'stages__left', 'stages__content', 992);
-  moveElem('footer__copyright', 'footer__column_first', 'footer__content', 992);
-  moveElem('footer__privacy-policy', 'footer__column_first', 'footer__content', 992);
-  moveElem('footer__social-links', 'footer__column_last', 'footer__content', 640);
+  moveElems();
 });
 
 window.addEventListener('resize', () => {
+  moveElems();
+});
+
+const $fileInputs = document.querySelectorAll('.file-field__input');
+$fileInputs.forEach($input => {
+  $input.addEventListener('change', () => {
+    $fileField = $input.closest('.file-field');
+    const $fileName = $fileField.querySelector('.file-field__names');
+    
+    $fileName.innerHTML += `
+      <span class="file-field__name">${$input.files[0].name}</span>
+      <button class="file-field__delete"></button>
+    `;
+
+    const $delete = $fileField.querySelector('.file-field__delete');
+    $delete.addEventListener('click', (e) => {
+      $input.value = '';
+      $fileName.innerHTML = '';
+      e.preventDefault();
+    });
+  });
+});
+
+const $tarif = document.querySelector('.tarif');
+
+if ($tarif) {
+  const $tarifClose = $tarif.querySelector('.tarif__close');
+  const $calcSettingsBtn = document.querySelector('.calc__btn-settings');
+  const $tarifBtns = $tarif.querySelectorAll('.tarif__btn');
+
+  $tarif.addEventListener('click', (e) => {
+    if (e.target === $tarif) {
+      $tarif.classList.add('tarif_hide');
+    }
+  });
+
+  $tarifClose.addEventListener('click', () => {
+    $tarif.classList.add('tarif_hide');
+  });
+
+  $calcSettingsBtn.addEventListener('click', () => {
+    $tarif.classList.remove('tarif_hide');
+  });
+
+  $tarifBtns.forEach($btn => {
+    $btn.addEventListener('click', () => {
+      $tarif.classList.add('tarif_hide');
+    });
+  });
+}
+
+function moveElems() {
   moveElem('stages__bg', 'stages__left', 'stages__content', 992);
   moveElem('footer__copyright', 'footer__column_first', 'footer__content', 992);
   moveElem('footer__privacy-policy', 'footer__column_first', 'footer__content', 992);
   moveElem('footer__social-links', 'footer__column_last', 'footer__content', 640);
-});
+}
 
 function moveStagesBg() {
   const $stagesBg = document.querySelector('.stages__bg');
@@ -237,6 +288,10 @@ function moveElem(elemClass, fromClass, toClass, width) {
   const $elem = document.querySelector(`.${elemClass}`);
   const $from = document.querySelector(`.${fromClass}`);
   const $to = document.querySelector(`.${toClass}`);
+
+  if (!$elem || $from || $to) {
+    return;
+  }
 
   if (window.innerWidth <= width && $elem.closest(`.${fromClass}`)) {
     $to.append($elem);
@@ -275,7 +330,7 @@ function updateTotal() {
   const $value = document.querySelector('.calc__total-value');
   const rateTotal = 1200;
   const cardPrice = 50;
-  const cardsCount = cardCountField.value;
+  const cardsCount = $cardCountField.value;
 
   const $cardsCount = document.querySelector('.calc__result-cards-count');
   $cardsCount.innerHTML = cardsCount;

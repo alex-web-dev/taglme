@@ -25,6 +25,20 @@
     .footer__column_first {
         flex-basis: 320px;
     }
+
+    .tarif__name {
+        font-size: 14px;
+    }
+
+    .tarif__price {
+        font-size: 26px;
+        margin-top: 10px;
+        padding-bottom: 15px;
+    }
+
+    .tarif__advs {
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 1140px) {
@@ -69,6 +83,11 @@
     .stages__item-num {
         font-size: 66px;
         line-height: 100px;
+    }
+
+    .tarif__btn {
+        font-size: 16px;
+        padding: 11px 0;
     }
 }
 
@@ -315,6 +334,28 @@
     .footer__privacy-policy {
         order: 3;
     }
+
+    .tarif__content {
+        width: 760px;
+    }
+
+    .tarif__list {
+        flex-wrap: wrap;
+        overflow-y: auto;
+        max-height: 70vh;
+    }
+
+    .tarif__item {
+        width: calc(50% - 30px);
+    }
+
+    .main__cart {
+        margin-top: 40px;
+    }
+
+    .main__delivery {
+        margin: 55px 0 60px;
+    }
 }
 
 
@@ -363,6 +404,46 @@
     .about__bg {
         align-self: center;
         margin-top: 20px;
+    }
+
+    .cart__header {
+        display: none;
+    }
+
+    .cart__item {
+        flex-wrap: wrap;   
+    }
+
+    .cart__item:first-child {
+        border-top: 1px solid #C4C4C4;
+        margin-top: 40px;
+    }
+
+    .cart__img {
+        width: 52px;
+    }
+
+    .cart__name {
+        width: calc(100% - 52px);
+        padding: 0 20px;
+    }
+
+    .cart__value {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .cart__value_count {
+        margin-top: 30px;
+    }
+
+    .cart__mobile-text {
+        display: initial;
+    }
+
+    .cart__total {
+        margin-left: 0;
+        text-align: left;
     }
 }
 
@@ -433,6 +514,45 @@
 
     .footer__column_last {
         margin-top: 15px;
+    }
+
+    .tarif__content {
+        width: 420px;
+    }
+
+    .tarif__item {
+        width: 100%;
+        margin: 15px 0;
+    }
+
+    .delivery__group {
+        margin-bottom: 20px;
+    }
+
+    .delivery__label {
+        margin-right: 0;
+    }
+
+    .delivery__group_mobile_full {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0;
+    }
+
+    .delivery__group_mobile_full .delivery__label {
+        width: calc(100%);
+        margin-bottom: 20px;
+    }
+
+    .delivery__group_mobile_full .delivery__btn {
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: calc(100% - 20px);
+    } 
+
+    .delivery__file-label,
+    .delivery__field {
+        width: calc(100% - 20px);
     }
 }
 
@@ -610,6 +730,14 @@
 
     .faq__answer {
         padding: 0 20px 20px 20px;
+    }
+
+    .tarif__content {
+        padding: 30px;
+    }
+
+    .main__cart {
+        margin-top: 18px;
     }
 }
 
