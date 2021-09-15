@@ -14,10 +14,10 @@
 	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 <body>
-	<header class="header">
+	<header class="header header_index">
 		<div class="wrapper">
 			<div class="header__content">
-				<a href="#" class="logo header__logo">
+				<a href="/" class="logo header__logo">
 					<img src="images/logo.svg" alt="Taglme" class="logo__img">
 				</a>
 				<nav class="menu header__menu">
@@ -34,7 +34,7 @@
 					</button>
 				</nav>
 				<a href="tel:+74993915405" class="link phone-link header__phone">+7 (499) 391 54 05</a>
-				<a href="#" class="link cart-link header__cart"></a>
+				<a href="/order.html" class="link cart-link header__cart"></a>
 			</div>
 		</div>
 	</header>
@@ -150,7 +150,7 @@
 										<div class="how-work__item-bg">
 											<img src="images/how-work/2.svg" alt="" class="how-work__item-img">
 										</div>
-										<p class="text how-work__item-text">На NFC карту или наклейку при изготовлении записывается ссылка на веб-страницу, которая находится на нашем сервисе управления цифровыми визитками.</p>
+										<p class="text how-work__item-text">В личном кабинете на сайте сервиса вы настраиваете все данные, которые будут отображаться на странице цифровой визитки (имя, фамилия, телефоны, месенджеры и тд.)</p>
 									</div>
 								</div>
 								<div class="swiper-slide">
@@ -227,62 +227,62 @@
 						<div class="calc__controls">
 							<div class="calc__item-name">Тип визиток</div>
 							<div class="calc__group">
-								<input class="calc__radio" type="radio" name="type" id="card" checked>
-								<label class="calc__btn" for="card">Карта</label>
-								<input class="calc__radio" type="radio" name="type" id="sticker">
-								<label class="calc__btn" for="sticker">Объемная наклейка</label>
+								<input class="form-radio" type="radio" name="type" id="card" checked>
+								<label class="form-btn calc__btn" for="card">Карта</label>
+								<input class="form-radio" type="radio" name="type" id="sticker">
+								<label class="form-btn calc__btn" for="sticker">Объемная наклейка</label>
 							</div>
 							<div class="calc__item-name">Дизайн</div>
 							<div class="calc__group">
-								<input class="calc__radio" type="radio" name="design" id="standart" checked>
-								<label class="calc__btn" for="standart">Стандартный макет</label>
-								<input class="calc__radio" type="radio" name="design" id="custom">
-								<label class="calc__btn" for="custom">Свой макет</label>
+								<input class="form-radio" type="radio" name="design" id="standart" checked>
+								<label class="form-btn calc__btn" for="standart">Стандартный макет</label>
+								<input class="form-radio" type="radio" name="design" id="custom">
+								<label class="form-btn calc__btn" for="custom">Свой макет</label>
 							</div>
 							<div class="calc__item-name">Опции</div>
 							<div class="calc__group">
-								<input class="calc__radio" type="radio" name="options" id="22mm" checked>
-								<label class="calc__btn" for="22mm">22мм диаметр</label>
-								<input class="calc__radio" type="radio" name="options" id="30mm">
-								<label class="calc__btn" for="30mm">30мм диаметр</label>
+								<input class="form-radio" type="radio" name="options" id="22mm" checked>
+								<label class="form-btn calc__btn" for="22mm">22мм диаметр</label>
+								<input class="form-radio" type="radio" name="options" id="30mm">
+								<label class="form-btn calc__btn" for="30mm">30мм диаметр</label>
 							</div>
 							<div class="calc__item-name">Общее количество визиток</div>
 							<div class="calc__group">
-								<input class="calc__field calc__field_card" name="card-count" type="number" placeholder="Кол-во" min="1" max="1000">
+								<input class="form-field calc__field calc__field_card" name="card-count" type="number" placeholder="Кол-во" min="1" max="1000">
 								<div class="calc__range calc__range_card">
 									<input class="calc__range-input" type="range" min="1" max="1000" value="500">
 								</div>
 							</div>
 							<div class="calc__item-name">Общее количество персон</div>
 							<div class="calc__group">
-								<input class="calc__field calc__field_person" name="person-count" type="number" placeholder="Кол-во" min="1" max="1000">
+								<input class="form-field calc__field calc__field_person" name="person-count" type="number" placeholder="Кол-во" min="1" max="1000">
 								<div class="calc__range calc__range_person">
 									<input class="calc__range-input" type="range" min="1" max="1000" value="500">
 								</div>
 							</div>
 							<div class="calc__item-name">Кодирование визиток</div>
 							<div class="calc__group calc__group_mobile_full">
-								<input class="calc__radio" type="radio" name="code" id="code-service" checked>
-								<label class="calc__btn" for="code-service">Подключить сервис Taglme</label>
-								<input class="calc__radio" type="radio" name="code" id="code-record">
-								<label class="calc__btn" for="code-record">Запись моих ссылок</label>
-								<input class="calc__radio" type="radio" name="code" id="code-not-record">
-								<label class="calc__btn" for="code-not-record">Ничего не записывать</label>
+								<input class="form-radio" type="radio" name="code" id="code-service" checked>
+								<label class="form-btn calc__btn" for="code-service">Подключить сервис Taglme</label>
+								<input class="form-radio" type="radio" name="code" id="code-record">
+								<label class="form-btn calc__btn" for="code-record">Запись моих ссылок</label>
+								<input class="form-radio" type="radio" name="code" id="code-not-record">
+								<label class="form-btn calc__btn" for="code-not-record">Ничего не записывать</label>
 							</div>
 							<div class="calc__item-name">Выбор тарифа подписки на сервис</div>
 							<div class="calc__group calc__group_mobile_full">
-								<input class="calc__radio" type="checkbox" name="rate" id="this-rate">
-								<label class="calc__btn" for="this-rate">Текущий тариф</label>
+								<input class="form-radio" type="checkbox" name="rate" id="this-rate" value="beginner" checked>
+								<label class="form-btn calc__btn" for="this-rate">Текущий тариф</label>
 								<button class="btn btn_second calc__btn-settings">Настроить</button>
 							</div>
 							<div class="calc__item-name">Выбор срока подписки</div>
 							<div class="calc__group">
-								<input class="calc__radio" type="radio" name="subscribe" id="6-mounth" checked>
-								<label class="calc__btn" for="6-mounth">6 месяцев</label>
-								<input class="calc__radio" type="radio" name="subscribe" id="1-year">
-								<label class="calc__btn" for="1-year">1 год</label>
-								<input class="calc__radio" type="radio" name="subscribe" id="2-year">
-								<label class="calc__btn" for="2-year">2 года</label>
+								<input class="form-radio" type="radio" name="subscribe" id="6-mounth" checked>
+								<label class="form-btn calc__btn" for="6-mounth">6 месяцев</label>
+								<input class="form-radio" type="radio" name="subscribe" id="1-year">
+								<label class="form-btn calc__btn" for="1-year">1 год</label>
+								<input class="form-radio" type="radio" name="subscribe" id="2-year">
+								<label class="form-btn calc__btn" for="2-year">2 года</label>
 							</div>
 							<div class="calc__result">
 								<div class="calc__result-main">
@@ -445,10 +445,10 @@
 				</div>
 				<div class="footer__column footer__column_last">
 					<div class="footer__item">
-						<a href="#" class="link email-link footer__link">info@nfcpoint.ru</a>
+						<a href="mailto:info@nfcpoint.ru" class="link email-link footer__link">info@nfcpoint.ru</a>
 					</div>
 					<div class="footer__item">
-						<a href="#" class="link phone-link footer__link footer__phone">8 (499) 391 54 05</a>
+						<a href="tel:+74993915405" class="link phone-link footer__link footer__phone">8 (499) 391 54 05</a>
 					</div>
 					<div class="footer__item">
 						<a href="#" class="link address footer__link footer__address">г. Москва, ул. <br> Промышленная, д. 11, стр. 3</a>
@@ -474,6 +474,55 @@
 			</div>
 		</div>
 	</footer>
+	<div class="tarif tarif_hide">
+		<div class="tarif__content">
+			<h2 class="title2">Тарифы</h2>
+			<div class="tarif__list">
+				<div class="tarif__item">
+					<div class="tarif__name">Начальный</div>
+					<div class="tarif__price">200 ₽/мес</div>
+					<ul class="tarif__advs">
+						<li class="tarif__adv">10 управляемых меток</li>
+						<li class="tarif__adv">14 дней бесплатно</li>
+						<li class="tarif__adv">скидка 10% при оплате за год</li>
+					</ul>
+					<button class="btn tarif__btn">Выбрать</button>
+				</div>
+				<div class="tarif__item">
+					<div class="tarif__name">Базовый</div>
+					<div class="tarif__price">1500 ₽/мес</div>
+					<ul class="tarif__advs">
+						<li class="tarif__adv">100 управляемых меток</li>
+						<li class="tarif__adv">скидка 10% при оплате за год</li>
+					</ul>
+					
+					<button class="btn tarif__btn">Выбрать</button>
+				</div>
+				<div class="tarif__item">
+					<div class="tarif__name">Профессиональный</div>
+					<div class="tarif__price">7000 ₽/мес</div>
+					<ul class="tarif__advs">
+						<li class="tarif__adv">500 управляемых меток</li>
+						<li class="tarif__adv">скидка 10% при оплате за год</li>
+						<li class="tarif__adv">пользовательские шаблоны</li>
+					</ul>
+					<button class="btn tarif__btn">Выбрать</button>
+				</div>
+				<div class="tarif__item">
+					<div class="tarif__name">Корпоративный</div>
+					<div class="tarif__price">12000 ₽/мес</div>
+					<ul class="tarif__advs">
+						<li class="tarif__adv">1000 управляемых меток</li>
+						<li class="tarif__adv">скидка 10% при оплате за год</li>
+						<li class="tarif__adv">пользовательские шаблоны</li>
+						<li class="tarif__adv">интеграции</li>
+					</ul>
+					<button class="btn tarif__btn">Выбрать</button>
+				</div>
+			</div>
+			<button class="tarif__close"></button>
+		</div>
+	</div>
 	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 	<script src="js/main.js"></script>
 </body>

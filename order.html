@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Taglme</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/media.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+</head>
+<body>
+	<header class="header">
+		<div class="wrapper">
+			<div class="header__content">
+				<a href="/" class="logo header__logo">
+					<img src="images/logo.svg" alt="Taglme" class="logo__img">
+				</a>
+				<nav class="menu header__menu">
+					<ul class="menu__list">
+						<li class="menu__item"><a class="link menu__link" href="/index.html#features">Преимущества</a></li>
+						<li class="menu__item"><a class="link menu__link" href="/index.html#how-work">Как работает?</a></li>
+						<li class="menu__item"><a class="link menu__link" href="/index.html#stages">Как заказать?</a></li>
+						<li class="menu__item"><a class="link menu__link" href="/index.html#calc">Калькулятор</a></li>
+						<li class="menu__item"><a class="link menu__link" href="/index.html#about">О нас</a></li>
+						<li class="menu__item"><a class="link menu__link" href="/index.html#faq">FAQ</a></li>
+					</ul>
+					<button class="menu__toggle">
+						<span class="menu__lines"></span>
+					</button>
+				</nav>
+				<a href="tel:+74993915405" class="link phone-link header__phone">+7 (499) 391 54 05</a>
+				<a href="/order.html" class="link cart-link header__cart"></a>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+		<section class="cart main__cart">
+			<div class="wrapper">
+				<h1 class="title1">Оформление заказа</h1>
+				<div class="cart__header">
+					<div class="cart__name">Наименование</div>
+					<div class="cart__value">Количество</div>
+					<div class="cart__value">Цена за ед.</div>
+					<div class="cart__value">Стоимость</div>
+				</div>
+				<div class="cart__list">
+					<div class="cart__item">
+						<img src="images/product.png" alt="" class="cart__img">
+						<div class="text cart__name">Пластиковая карта</div>
+						<div class="text cart__value cart__value_count"><span class="cart__mobile-text">Количество: </span>134</div>
+						<div class="text cart__value"><span class="cart__mobile-text">Цена за ед.: </span>50 ₽</div>
+						<div class="text cart__value"><span class="cart__mobile-text">Стоимость: </span>5 000 ₽</div>
+					</div>
+					<div class="cart__item">
+						<img src="images/product.png" alt="" class="cart__img">
+						<div class="text cart__name">Пластиковая карта</div>
+						<div class="text cart__value cart__value_count"><span class="cart__mobile-text">Количество: </span>134</div>
+						<div class="text cart__value"><span class="cart__mobile-text">Цена за ед.: </span>50 ₽</div>
+						<div class="text cart__value"><span class="cart__mobile-text">Стоимость: </span>5 000 ₽</div>
+					</div>
+				</div>
+				<div class="text cart__total">Итого: <span class="cart__total-value">10 000 ₽</span></div>
+			</div>
+		</section>
+		<section class="delivery main__delivery">
+			<div class="wrapper">
+				<h2 class="title2">Доставка</h2>
+				<form class="delivery__form" action="" method="POST">
+					<div class="delivery__group">
+						<input class="form-radio" type="radio" name="delivery-type" id="courier"  value="courier" checked>
+						<label class="form-btn delivery__btn" for="courier">Курьером</label>
+						<input class="form-radio" type="radio" name="delivery-type" id="pickup" value="pickup">
+						<label class="form-btn delivery__btn" for="pickup">Самовывоз</label>
+					</div>
+					<div class="delivery__group delivery__group_mobile_full">
+						<label class="delivery__label">
+							<div class="delivery__name">ФИО *</div>
+							<input type="text" class="form-field delivery__field">
+						</label>
+						<label class="delivery__label">
+							<div class="delivery__name">Компания *</div>
+							<input type="text" class="form-field delivery__field">
+						</label>
+					</div>
+					<div class="delivery__group delivery__group_mobile_full">
+						<label class="delivery__label">
+							<div class="delivery__name">Телефон *</div>
+							<input type="text" class="form-field delivery__field">
+						</label>
+						<label class="delivery__label">
+							<div class="delivery__name">E-mail *</div>
+							<input type="text" class="form-field delivery__field">
+						</label>
+					</div>
+					<div class="delivery__group delivery__group_mobile_full">
+						<label class="delivery__label">
+							<div class="delivery__name">Город *</div>
+							<input type="text" class="form-field delivery__field">
+						</label>
+						<label class="delivery__label">
+							<div class="delivery__name">Пункт выдачи *</div>
+							<input type="text" class="form-field delivery__field">
+						</label>
+					</div>
+					<div class="delivery__map">
+						<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A71137fbd82adde1d4a29d8f02c83de1e843394c771702980595d95048eb32daf&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
+					</div>
+					<div class="delivery__name">Оплата</div>
+					<div class="delivery__group delivery__group_mobile_full">
+						<input class="form-radio" type="radio" name="pay-type" id="online" value="online"  checked>
+						<label class="form-btn delivery__btn" for="online">Онлайн картой</label>
+						<input class="form-radio" type="radio" name="pay-type" id="account" value="account" >
+						<label class="form-btn delivery__btn" for="account">По счету для юр. лица</label>
+					</div>
+					<div class="delivery__group">
+						<label for="" class="delivery__label">
+							<div class="delivery__name">Комментарий</div>
+							<input type="text" class="form-field delivery__field">
+						</label>
+					</div>
+					<div class="delivery__group delivery__group_mobile_full">
+						<div class="delivery__label">
+							<div class="delivery__name">Прикрепить файлы/макеты</div>
+							<div class="file-field">
+								<input type="file" class="file-field__input" id="file-design" name="file-design">
+								<label class="file-field__label delivery__file-label" for="file-design">Прикрепить</label>
+								<div class="file-field__names"></div>
+							</div>
+						</div>
+						<div class="delivery__label">
+							<div class="delivery__name">Прикрепить реквизиты</div>
+							<div class="file-field">
+								<input type="file" class="file-field__input" id="file-requisite" name="file-requisite">
+								<label class="file-field__label delivery__file-label" for="file-requisite">Прикрепить</label>
+								<div class="file-field__names"></div>
+							</div>
+						</div>
+					</div>
+					<div class="delivery__total">
+						<h2 class="title2 delivery__total-title">Итого:</h2>
+						<div class="text delivery__text">Сумма без доставки: <span class="delivery__value">10 000 ₽</span></div>
+						<div class="text delivery__text">Стоимость доставки: <span class="delivery__value">100 ₽</span></div>
+						<p class="text delivery__text">Всего: <span class="delivery__total-value">10 100 ₽</span></p>
+					</div>
+					<button class="btn delivery__submit">Оформить заказ</button>
+				</div>
+			</form>
+		
+		</section>
+	</main>
+	<footer class="footer">
+		<div class="wrapper">
+			<div class="footer__content">
+				<div class="footer__column footer__column_first">
+					<a href="#" class="logo">
+						<img src="images/logo-white.svg" alt="Taglme" class="logo__img">
+					</a>
+					<div class="footer__copyright">© 2021 taglme</div>
+					<div class="footer__item">
+						<a href="#" class="link footer__link footer__privacy-policy">Политика конфиденциальности</a>
+					</div>
+				</div>
+				<div class="footer__column">
+					<div class="footer__item">
+						<a href="/index.html#features" class="link footer__link">Преимущества</a>
+					</div>
+					<div class="footer__item">
+						<a href="/index.html#how-work" class="link footer__link">Как работает?</a>
+					</div>
+					<div class="footer__item">
+						<a href="/index.html#stages" class="link footer__link">Как заказать?</a>
+					</div>
+				</div>
+				<div class="footer__column">
+					<div class="footer__item">
+						<a href="/index.html#calc" class="link footer__link">Онлайн-калькулятор</a>
+					</div>
+					<div class="footer__item">
+						<a href="/index.html#clients" class="link footer__link">Нам доверяют</a>
+					</div>
+					<div class="footer__item">
+						<a href="/index.html#about" class="link footer__link">О нас</a>
+					</div>
+					<div class="footer__item">
+						<a href="/index.html#faq" class="link footer__link">FAQ</a>
+					</div>
+				</div>
+				<div class="footer__column footer__column_last">
+					<div class="footer__item">
+						<a href="mailto:info@nfcpoint.ru" class="link email-link footer__link">info@nfcpoint.ru</a>
+					</div>
+					<div class="footer__item">
+						<a href="tel:+74993915405" class="link phone-link footer__link footer__phone">8 (499) 391 54 05</a>
+					</div>
+					<div class="footer__item">
+						<a href="#" class="link address footer__link footer__address">г. Москва, ул. <br> Промышленная, д. 11, стр. 3</a>
+					</div>
+					<div class="social-links footer__social-links">
+						<a href="#" class="social-links__item">
+							<img src="images/icons/vk.svg" alt="" class="social-links__img">
+						</a>
+						<a href="#" class="social-links__item">
+							<img src="images/icons/youtube.svg" alt="" class="social-links__img">
+						</a>
+						<a href="#" class="social-links__item">
+							<img src="images/icons/twitter.svg" alt="" class="social-links__img">
+						</a>
+						<a href="#" class="social-links__item">
+							<img src="images/icons/facebook.svg" alt="" class="social-links__img">
+						</a>
+						<a href="#" class="social-links__item">
+							<img src="images/icons/instagram.svg" alt="" class="social-links__img">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
