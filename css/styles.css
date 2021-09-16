@@ -704,11 +704,12 @@ body {
     position: absolute;
     content: "";
     height: 4px;
-    background: var(--color-primary);
+    background-color: var(--color-primary);
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     width: 40%;
-    top: calc(50% + 2px);
+    top: calc(50% + 1px);
+    pointer-events: none;
 }
 
 .calc__range_card:before {
@@ -723,7 +724,6 @@ body {
     -webkit-appearance: none;
     flex: 1 1 auto;
     width: 100%;
-    height: 2px;
 }
 
 input::-webkit-outer-spin-button,
@@ -758,7 +758,10 @@ input[type='number'] {
     background: #C4C4C4;
     height: 4px;
     -webkit-appearance: none;
+    background: transparent;
     border-radius: 3px;
+    border-width: 10px 0 4px;
+    position: relative;
   }
 
 .calc__range-input::-webkit-slider-thumb {
@@ -793,10 +796,10 @@ input[type='number'] {
     border-radius: 50%;
     border: none;
     -webkit-appearance: none;
-    background-color: var(--color-primary);
-    margin-top: -7px;
+    background: #03BAAF;
     z-index: 99;
     position: relative;
+    transform: translateY(5px);
     cursor: pointer;
   }
 
