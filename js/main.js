@@ -142,7 +142,12 @@ const clientsSwiper = new Swiper('.clients__swiper-container',{
 const $anchors = document.querySelectorAll('a[href^="#"]');
 for (let $anchor of $anchors) {
   $anchor.addEventListener('click',  (e) => {
-    e.preventDefault()
+    const isEdge = /Edge/.test(navigator.userAgent);
+    if (isEdge) {
+      return;
+    }
+    
+    e.preventDefault();
     
     const blockID = $anchor.getAttribute('href');
     const $elem = document.querySelector(blockID);
@@ -341,3 +346,10 @@ function updateTotal() {
   const total = rateTotal + cardPrice * cardsCount;
   $value.innerHTML = `${total} ₽`;
 }
+
+const $faqItems = document.querySelectorAll('.faq__item');
+$faqItems.forEach($item => {
+  $item.addEventListener('click', () => {
+    $item.classList.toggle('faq__item_active');
+  });
+});
