@@ -142,7 +142,12 @@ const clientsSwiper = new Swiper('.clients__swiper-container',{
 const $anchors = document.querySelectorAll('a[href^="#"]');
 for (let $anchor of $anchors) {
   $anchor.addEventListener('click',  (e) => {
-    e.preventDefault()
+    const isEdge = /Edge/.test(navigator.userAgent);
+    if (isEdge) {
+      return;
+    }
+    
+    e.preventDefault();
     
     const blockID = $anchor.getAttribute('href');
     const $elem = document.querySelector(blockID);
