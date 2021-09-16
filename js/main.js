@@ -341,3 +341,10 @@ function updateTotal() {
   const total = rateTotal + cardPrice * cardsCount;
   $value.innerHTML = `${total} ₽`;
 }
+
+const $faqItems = document.querySelectorAll('.faq__item');
+$faqItems.forEach($item => {
+  $item.addEventListener('click', () => {
+    $item.classList.toggle('faq__item_active');
+  });
+});

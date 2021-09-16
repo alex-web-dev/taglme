@@ -963,12 +963,6 @@ input[type='number'] {
     display: none
 }
 
-.faq__item summary {
-    list-style: none;
-    cursor: pointer;
-    user-select: none;
-}
-
 .faq__question {
     font-weight: 700;
     position: relative;
@@ -976,6 +970,9 @@ input[type='number'] {
     padding: 20px 30px;
     font-size: 18px;
     line-height: 24px;
+    cursor: pointer;
+    user-select: none;
+    -ms-user-select: none;
 }
 
 .faq__question:before {
@@ -991,7 +988,7 @@ input[type='number'] {
     transform: translateY(-50%);
 }
 
-.faq__item[open] .faq__question:before {
+.faq__item_active .faq__question:before {
     border-left: 6px solid transparent;
     border-top: 11px solid #C4C4C4;
     right: 37px;
@@ -1001,6 +998,11 @@ input[type='number'] {
 .faq__answer {
     max-width: 980px;
     padding: 0 30px 30px 30px;
+    display: none;
+}
+
+.faq__item_active .faq__answer {
+    display: block;
 }
 
 .faq__item-text {
